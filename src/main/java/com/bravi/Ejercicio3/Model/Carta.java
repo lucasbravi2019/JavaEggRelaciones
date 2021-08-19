@@ -2,23 +2,17 @@ package com.bravi.Ejercicio3.Model;
 
 import java.util.Objects;
 
-import com.bravi.Ejercicio3.Service.CartaService;
-
 public class Carta {
     private int numero;
 
     private String palo;
 
-    private CartaService service;
-
     public Carta() {
-        this.service = new CartaService(this);
     }
 
     public Carta(int numero, String palo) {
         this.numero = numero;
         this.palo = palo;
-        this.service = new CartaService(this);
     }
 
     public int getNumero() {
@@ -37,14 +31,6 @@ public class Carta {
         this.palo = palo;
     }
 
-    public CartaService getService() {
-        return this.service;
-    }
-
-    public void setService(CartaService service) {
-        this.service = service;
-    }
-
     public Carta numero(int numero) {
         setNumero(numero);
         return this;
@@ -52,11 +38,6 @@ public class Carta {
 
     public Carta palo(String palo) {
         setPalo(palo);
-        return this;
-    }
-
-    public Carta service(CartaService service) {
-        setService(service);
         return this;
     }
 
@@ -68,17 +49,17 @@ public class Carta {
             return false;
         }
         Carta carta = (Carta) o;
-        return numero == carta.numero && Objects.equals(palo, carta.palo) && Objects.equals(service, carta.service);
+        return numero == carta.numero && Objects.equals(palo, carta.palo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(numero, palo, service);
+        return Objects.hash(numero, palo);
     }
 
     @Override
     public String toString() {
-        return "{" + " numero='" + getNumero() + "'" + ", palo='" + getPalo() + "'" + ", service='" + getService() + "'"
-                + "}";
+        return "{" + " numero='" + getNumero() + "'" + ", palo='" + getPalo() + "'" + "}";
     }
+
 }
