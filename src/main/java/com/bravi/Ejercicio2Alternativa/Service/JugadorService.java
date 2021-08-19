@@ -1,7 +1,5 @@
 package com.bravi.Ejercicio2Alternativa.Service;
 
-import java.util.Objects;
-
 import com.bravi.Ejercicio2Alternativa.Model.Jugador;
 import com.bravi.Ejercicio2Alternativa.Model.Revolver;
 
